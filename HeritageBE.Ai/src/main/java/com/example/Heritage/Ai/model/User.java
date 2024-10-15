@@ -1,10 +1,9 @@
-package com.example.HeritageAi.User;
+package com.example.Heritage.Ai.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
-
+@Document(collection = "User")
 public class User {
 
     @Id
@@ -13,6 +12,12 @@ public class User {
     private String password;
 
     public User(Integer ID, String username, String password) {
+        this.ID = ID;
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
